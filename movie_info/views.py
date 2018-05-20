@@ -19,3 +19,11 @@ def movie_info(request, pk):
     except Movies.DoesNotExist:
         raise Http404
     return render(request, 'movie_info.html', {'movie': movie})
+
+
+def add_review(request, pk):
+    try:
+        movie = Movies.objects.get(pk=pk)
+    except Movies.DoesNotExist:
+        raise Http404
+    return render(request, 'add_review.html', {'movie': movie})

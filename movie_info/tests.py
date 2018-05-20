@@ -44,3 +44,25 @@ class MovieInfoTests(TestCase):
     def test_movie_info_url_resolves_movie_info_view(self):
         view = resolve('/1/')
         self.assertEquals(view.func, movie_info)
+
+
+class NewTopicTests(TestCase):
+    def setUp(self):
+        Movies.objects.create(name='Test Movie', director = 'Test Director',
+        imdb_score = 7.8, popularity = 78, genre = 'Testing')
+
+    def test_add_review_view_success_status_code(self):
+        url = reverse('add_review', kwargs={'pk': 1})
+        response = self.client.get(url)
+        self.assertEquals(response.status_code, 200)
+
+    def test_add_review_view_not_found_status_code(self):
+        url = reverse('add_review', kwargs={'pk': 99})
+        response = self.client.get(url)
+        self.assertEquals(response.status_code, 404)
+
+    def test_add_review_view_contains_link_back_to_movie_info_view(self):
+        add_review_url = reverse('add_review', kwargs={'pk': 1})
+        movie_info_url = reverse('movie_info', kwargs={'pk': 1})
+        response = self.client.get(add_review_url)
+        self.assertContains(response, 'href="{0}"'.format(movie_info_url))
