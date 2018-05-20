@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   </head>
   <body>
-    <h1>Movies</h1>
-
-    <table border="1">
-      <thead>
+    <div class="container">
+      <ol class="breadcrumb my-4">
+        <li class="breadcrumb-item active">Movie_Info</li>
+      </ol>
+      <table class="table">
+        <thead class="thead-inverse">
         <tr>
           <th>Movie</th>
           <th>Director</th>
@@ -23,12 +25,12 @@
           <tr>
             <td>
               {{ movie.name }}<br>
-              <small style="color: #888">{{ movie.genre }}</small>
+              <small class="text-muted d-block">{{ movie.genre }}</small>
             </td>
-            <td>{{movie.director}}</td>
-            <td>{{movie.imdb_score}}</td>
-            <td>0</td>
-            <td></td>
+            <td class="align-middle">{{movie.director}}</td>
+            <td class="align-middle">{{movie.imdb_score}}</td>
+            <td class="align-middle">0</td>
+            <td class="align-middle"></td>
           </tr>
         {% endfor %}
       </tbody>
