@@ -12,7 +12,7 @@ class GenreTypes(models.Model):
 class Movies(models.Model):
     popularity = models.FloatField()
     director = models.CharField(max_length=100)
-    genre = models.ManyToManyField(GenreTypes)
+    genre = models.CharField(max_length=100, default='Not Available')
     imdb_score = models.FloatField()
     name = models.CharField(max_length=100)
 
