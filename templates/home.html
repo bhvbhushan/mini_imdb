@@ -28,7 +28,7 @@
         {% for movie in movies %}
           <tr>
             <td>
-              {{ movie.name }}<br>
+              <a href="{% url 'movie_info' movie.pk %}">{{ movie.name }}</a>
               <small class="text-muted d-block">{{ movie.genre }}</small>
             </td>
             <td class="align-middle">{{movie.director}}</td>
