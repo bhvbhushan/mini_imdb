@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
 from .models import Movies
+from django.contrib.auth.models import User
 
 
 def home(request):
@@ -19,11 +20,3 @@ def movie_info(request, pk):
     except Movies.DoesNotExist:
         raise Http404
     return render(request, 'movie_info.html', {'movie': movie})
-
-
-def add_review(request, pk):
-    try:
-        movie = Movies.objects.get(pk=pk)
-    except Movies.DoesNotExist:
-        raise Http404
-    return render(request, 'add_review.html', {'movie': movie})

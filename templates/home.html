@@ -16,8 +16,7 @@
           <th>Movie</th>
           <th>Director</th>
           <th>IMDB Rating</th>
-          <th>Reviews</th>
-          <th>Last Updated</th>
+          <th>99Popularity</th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +28,7 @@
             </td>
             <td class="align-middle">{{movie.director}}</td>
             <td class="align-middle">{{movie.imdb_score}}</td>
-            <td class="align-middle">0</td>
+            <td class="align-middle">{{movie.popularity}}</td>
             <td class="align-middle"></td>
           </tr>
         {% endfor %}

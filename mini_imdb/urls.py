@@ -22,6 +22,5 @@ from movie_info import views
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'(?P<pk>\d+)/$', views.movie_info, name='movie_info'),
-    url(r'(?P<pk>\d+)/new/$', views.add_review, name='add_review'),
     path('admin/', admin.site.urls),
 ]
