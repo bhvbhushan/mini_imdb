@@ -1,15 +1,11 @@
-{% load static %}<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Movies</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  </head>
-  <body>
-    <div class="container">
-      <ol class="breadcrumb my-4">
-        <li class="breadcrumb-item active">Movie_Info</li>
-      </ol>
+{% extends 'base.html' %}
+
+  {% block breadcrumb %}
+  <li class="breadcrumb-item active">Movies</li>
+  {% endblock %}
+
+
+  {% block content %}
       <form method='GET', action = ''>
         <input = 'Text' name = 'q' size="50" placeholder="Search Movies, Director, Genre..."/>
         <input type = 'submit' value = 'Search' />
@@ -39,5 +35,4 @@
         {% endfor %}
       </tbody>
     </table>
-  </body>
-</html>
+  {% endblock %}
