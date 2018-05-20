@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movies</title>
+  </head>
+  <body>
+    <h1>Movies</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Movie</th>
+          <th>Director</th>
+          <th>IMDB Rating</th>
+          <th>Reviews</th>
+          <th>Last Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for movie in movies %}
+          <tr>
+            <td>
+              {{ movie.name }}<br>
+              <small style="color: #888">{{ movie.genre }}</small>
+            </td>
+            <td>{{movie.director}}</td>
+            <td>{{movie.imdb_score}}</td>
+            <td>0</td>
+            <td></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
