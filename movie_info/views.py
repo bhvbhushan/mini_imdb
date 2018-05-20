@@ -10,3 +10,8 @@ def home(request):
         (movies.filter(director__icontains=query)) |\
         (movies.filter(genre__icontains=query))
     return render(request, 'home.html', {'movies': movies})
+
+
+def movie_info(request, pk):
+    movie = Movies.objects.get(pk=pk)
+    return render(request, 'movie_info.html', {'movie': movie})

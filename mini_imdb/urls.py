@@ -21,5 +21,6 @@ from movie_info import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'(?P<pk>\d+)/$', views.movie_info, name='movie_info'),
     path('admin/', admin.site.urls),
 ]
