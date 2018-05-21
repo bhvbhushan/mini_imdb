@@ -25,7 +25,7 @@ SECRET_KEY = 'd-b408-otj!_abicvtljch9dh2wy(_&k4vyc*ngga87od!++re'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mini-imdb-bhavya.herokuapp.com']
 
 
 # Application definition
