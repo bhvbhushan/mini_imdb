@@ -8,7 +8,6 @@ def create_initial_products(apps, schema_editor):
 
     data = json.load(open("movie_info/migrations/imdb.json"))
 
-    genre_list = []
     for movie in data:
         movie_model = Movies.objects.create(popularity = movie['99popularity'],
         director = movie['director'],
@@ -21,7 +20,7 @@ def create_initial_products(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('movie_info', '0001_initial'),
+        ('movie_info', '0004_merge_20180521_1652'),
     ]
 
     operations = [
