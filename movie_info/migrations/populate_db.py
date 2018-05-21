@@ -20,7 +20,7 @@ def create_initial_products(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('movie_info', '0004_merge_20180521_16520'),
+        ('movie_info', '0001_initial'),
     ]
 
     operations = [
