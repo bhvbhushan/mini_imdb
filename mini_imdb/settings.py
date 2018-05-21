@@ -25,7 +25,9 @@ SECRET_KEY = 'd-b408-otj!_abicvtljch9dh2wy(_&k4vyc*ngga87od!++re'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mini-imdb-bhavya.herokuapp.com']
+ALLOWED_HOSTS = [
+    'mini-imdb-bhavya.herokuapp.com',
+    '127.0.0.1',]
 
 
 # Application definition
@@ -81,6 +83,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
 
 
 # Password validation
