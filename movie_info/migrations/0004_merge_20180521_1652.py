@@ -6,7 +6,6 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('movie_info', 'populate_db'),
         ('movie_info', '0003_auto_20180520_1909'),
     ]
 

@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 ('director', models.CharField(max_length=100)),
                 ('imdb_score', models.FloatField()),
                 ('name', models.CharField(max_length=100)),
-                ('genre', models.ManyToManyField(to='movie_info.GenreTypes')),
+                ('genre', models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
