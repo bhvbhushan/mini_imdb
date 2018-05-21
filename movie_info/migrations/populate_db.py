@@ -10,7 +10,7 @@ def create_initial_products(apps, schema_editor):
 
     genre_list = []
     for movie in data:
-        movie_model = Movie.objects.create(popularity = movie['99popularity'],
+        movie_model = Movies.objects.create(popularity = movie['99popularity'],
         director = movie['director'],
         genre = movie['genre'],
         imdb_score = movie['imdb_score'],
