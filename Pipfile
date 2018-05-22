@@ -11,7 +11,7 @@ gunicorn = "*"
 django-heroku = "*"
 djangorestframework = "*"
 drfdocs = "*"
-
+coreapi = "*"
 
 [requires]
 
